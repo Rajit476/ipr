@@ -17,6 +17,7 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
@@ -34,6 +35,283 @@
 
         h1 {
             font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .section {
+            background: white;
+            margin: 40px 0;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .section h2 {
+            color: #2d3748;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        ul { list-style: none; padding: 0; }
+
+        .problem-list li, .cause-list li, .solution-list li, .impact-list li, .customer-list li, .activity-list li, .resource-list li {
+            background: #f8fafc;
+            margin: 15px 0;
+            padding: 20px 25px;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .problem-list li { border-left-color: #e53e3e; background: #fff5f5; }
+        .cause-list li { border-left-color: #dd6b20; background: #fffaf0; }
+        .solution-list li { border-left-color: #38a169; background: #f0fff4; }
+        .impact-list li { border-left-color: #3182ce; background: #ebf8ff; }
+        .customer-list li { border-left-color: #805ad5; background: #faf5ff; }
+        .activity-list li { border-left-color: #d69e2e; background: #fffff0; }
+        .resource-list li { border-left-color: #319795; background: #e6fffa; }
+
+        li:hover { transform: translateX(10px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+        .highlight { font-weight: 600; color: #2d3748; }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number { font-size: 2rem; font-weight: bold; margin-bottom: 5px; }
+        .stat-description { font-size: 0.9rem; opacity: 0.9; }
+
+        .cta-section {
+            background: linear-gradient(135deg, #38a169, #2f855a);
+            color: white;
+            text-align: center;
+            padding: 60px;
+            border-radius: 20px;
+            margin: 50px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #38a169;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover { transform: scale(1.05); }
+
+        .customer-segments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .segment-card {
+            background: #805ad5;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .segment-title { font-weight: bold; margin-bottom: 10px; }
+
+        /* FADE IN SYSTEM */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .section { padding: 25px; }
+            .section h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HealthSync</h1>
+            <p class="subtitle">Unified Biometric Health Record Platform</p>
+            <p class="tagline">Revolutionizing Healthcare Through Secure Digital Identity</p>
+        </header>
+
+        <div class="section fade-in">
+            <h2><span class="section-number">1</span> Problem Analysis</h2>
+            <ul class="problem-list">
+                <li><span class="highlight">Fragmented health records</span> – Manual data silos cause critical errors.</li>
+                <li><span class="highlight">Medication errors</span> – Lack of visibility into prescription history.</li>
+                <li><span class="highlight">Identity verification failures</span> – High risk of patient misidentification.</li>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2><span class="section-number">2</span> Root Causes</h2>
+            <ul class="cause-list">
+                <li>No unified national Electronic Health Record (EHR) system.</li>
+                <li>Siloed hospital databases preventing interoperability.</li>
+                <li>Manual identity verification processes prone to human error.</li>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2><span class="section-number">3</span> Customer Relationships</h2>
+            <div class="customer-segments">
+                <div class="segment-card">
+                    <div class="segment-title">🏥 Primary Segments</div>
+                    <p>Hospitals, independent clinics, and individual patients.</p>
+                </div>
+                <div class="segment-card">
+                    <div class="segment-title">🤝 Relationship</div>
+                    <p>Dedicated support for providers; self-service for patients.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2><span class="section-number">4</span> Key Resources</h2>
+            <ul class="resource-list">
+                <li><span class="highlight">Technology Infrastructure:</span> Cloud servers and biometric hardware.</li>
+                <li><span class="highlight">Human Resources:</span> Developers and medical consultants.</li>
+                <li><span class="highlight">Compliance:</span> HIPAA & GDPR regulatory frameworks.</li>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2><span class="section-number">5</span> HealthSync Solution</h2>
+            <ul class="solution-list">
+                <li>Biometric identity verification (Fingerprint/Face).</li>
+                <li>Real-time allergy and drug interaction detection.</li>
+                <li>AI-driven healthcare decision support systems.</li>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2><span class="section-number">6</span> Projected Impact</h2>
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <div class="stat-number">1.2M</div>
+                    <div class="stat-description">Errors Prevented</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">₹25k Cr</div>
+                    <div class="stat-description">Annual Savings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Zero</div>
+                    <div class="stat-description">Identity Frauds</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section fade-in">
+            <h2>Transform Healthcare in India</h2>
+            <p>Secure, Unified, and Intelligent.</p>
+            <a href="#" class="cta-button">Join the Implementation</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.15
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
             margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             font-weight: 700;
