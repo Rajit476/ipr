@@ -108,12 +108,12 @@
             line-height: 1.7;
         }
 
-        .problem-list, .cause-list, .solution-list, .impact-list {
+        .problem-list, .cause-list, .solution-list, .impact-list, .customer-list, .activity-list, .resource-list {
             list-style: none;
             padding: 0;
         }
 
-        .problem-list li, .cause-list li, .solution-list li, .impact-list li {
+        .problem-list li, .cause-list li, .solution-list li, .impact-list li, .customer-list li, .activity-list li, .resource-list li {
             background: #f8fafc;
             margin: 15px 0;
             padding: 20px 25px;
@@ -144,8 +144,24 @@
             background: linear-gradient(135deg, #bee3f8, #90cdf4);
         }
 
+        .customer-list li {
+            border-left-color: #805ad5;
+            background: linear-gradient(135deg, #e9d8fd, #d6bcfa);
+        }
+
+        .activity-list li {
+            border-left-color: #d69e2e;
+            background: linear-gradient(135deg, #faf089, #f6e05e);
+        }
+
+        .resource-list li {
+            border-left-color: #319795;
+            background: linear-gradient(135deg, #b2f5ea, #81e6d9);
+        }
+
         .problem-list li:hover, .cause-list li:hover, 
-        .solution-list li:hover, .impact-list li:hover {
+        .solution-list li:hover, .impact-list li:hover,
+        .customer-list li:hover, .activity-list li:hover, .resource-list li:hover {
             transform: translateX(10px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
@@ -243,6 +259,33 @@
             font-size: 1.3rem;
         }
 
+        .customer-segments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .segment-card {
+            background: linear-gradient(135deg, #805ad5, #9f7aea);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(128, 90, 213, 0.3);
+        }
+
+        .segment-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .segment-description {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -264,7 +307,7 @@
                 gap: 10px;
             }
 
-            .impact-stats {
+            .impact-stats, .customer-segments {
                 grid-template-columns: 1fr;
             }
         }
@@ -326,11 +369,164 @@
         <div class="section fade-in">
             <h2>
                 <span class="section-number">3</span>
+                Customer Relationships
+            </h2>
+            <p>HealthSync establishes tailored relationships with specific customer segments to maximize value delivery:</p>
+            
+            <div class="customer-segments">
+                <div class="segment-card">
+                    <div class="segment-title">🏥 Primary Customer Segment</div>
+                    <div class="segment-description">Hospitals, independent clinics, and individual patients - the main users that the service targets</div>
+                </div>
+                
+                <div class="segment-card">
+                    <div class="segment-title">🤝 Relationship Types</div>
+                    <div class="segment-description">Dedicated personal support for hospitals vs automated self-service for individual patients</div>
+                </div>
+                
+                <div class="segment-card">
+                    <div class="segment-title">📱 Communication Channels</div>
+                    <div class="segment-description">In-app messaging, email newsletters, and direct phone support</div>
+                </div>
+                
+                <div class="segment-card">
+                    <div class="segment-title">📊 Success Metrics</div>
+                    <div class="segment-description">Customer satisfaction scores (CSAT) and user retention rates</div>
+                </div>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2>
+                <span class="section-number">4</span>
+                Key Resources
+            </h2>
+            <p>Essential assets required to deliver HealthSync's comprehensive healthcare platform:</p>
+            <ul class="resource-list">
+                <li><span class="highlight">Technology Infrastructure:</span> Physical hardware, servers, and cloud networks that host and support the digital platform</li>
+                <li><span class="highlight">Software System:</span> Proprietary code, algorithms, and applications that make up the core product functionality</li>
+                <li><span class="highlight">Human Resources:</span> Skilled team of developers, medical consultants, and support staff who build and manage the service</li>
+                <li><span class="highlight">Data Resources:</span> Vast databases of medical information and user records that power the system's insights</li>
+                <li><span class="highlight">Partnership & Compliance:</span> Established relationships with legal experts and regulatory bodies that ensure the business operates within the law</li>
+                <li><span class="highlight">Financial Resources:</span> Capital and funding needed to sustain operations, pay staff, and invest in research and development</li>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2>
+                <span class="section-number">5</span>
+                Key Activities
+            </h2>
+            <p>Core operational activities that ensure HealthSync delivers secure, reliable healthcare services:</p>
+            <ul class="activity-list">
+                <li><span class="highlight">Patient Data Management:</span> Securely collecting, storing, and organizing patient records to ensure information is accurate and accessible</li>
+                <li><span class="highlight">Biometric Authentication:</span> Implementing secure login methods, like fingerprint or facial recognition, to verify the identity of healthcare providers and patients</li>
+                <li><span class="highlight">Prescription Safety:</span> Using automated checks to prevent medication errors, such as dangerous drug interactions or incorrect dosages</li>
+                <li><span class="highlight">Alert & Notification:</span> Sending real-time updates to users regarding medication schedules, appointment reminders, or urgent health changes</li>
+                <li><span class="highlight">System Maintenance:</span> Regularly updating software and hardware to ensure the platform remains functional, fast, and bug-free</li>
+                <li><span class="highlight">Compliance:</span> Ensuring all operations strictly follow healthcare laws and data privacy regulations like HIPAA or GDPR</li>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2>
+                <span class="section-number">6</span>
                 HealthSync Solution
             </h2>
             <p>The system proposes a <strong>Unified Biometric Health Record Platform</strong> with comprehensive features:</p>
             <ul class="solution-list">
                 <li><span class="highlight">Secure instant data access</span> for hospitals and doctors</li>
+                <li><span class="highlight">Biometric identity verification</span> (fingerprint/face)</li>
+                <li><span class="highlight">Real-time allergy & drug interaction detection</span></li>
+                <li><span class="highlight">AI-driven healthcare decision support</span></li>
+                <li><span class="highlight">Integrated digital health records</span></li>
+            </ul>
+            <div class="key-features">
+                <h3>Core Innovation:</h3>
+                <p>This creates a single, secure patient identity linked to all medical records across the entire healthcare network.</p>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>
+                <span class="section-number">7</span>
+                Projected Impact
+            </h2>
+            <p>If implemented nationwide, HealthSync will deliver measurable improvements to India's healthcare system:</p>
+            
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <div class="stat-number">1.2M</div>
+                    <div class="stat-description">Medication errors prevented annually</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">₹25,000 Cr</div>
+                    <div class="stat-description">Saved from hospital readmissions</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">Zero</div>
+                    <div class="stat-description">Patient misidentification cases</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-description">Reduction in adverse drug reactions</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-description">Lower prescription waste</div>
+                </div>
+            </div>
+
+            <ul class="impact-list" style="margin-top: 30px;">
+                <li><span class="highlight">1.2 million medication errors prevented annually</span></li>
+                <li><span class="highlight">₹25,000 crore saved from hospital readmissions</span></li>
+                <li><span class="highlight">Reduced adverse drug reactions</span></li>
+                <li><span class="highlight">Lower prescription waste</span></li>
+                <li><span class="highlight">Elimination of patient misidentification</span></li>
+            </ul>
+        </div>
+
+        <div class="cta-section fade-in">
+            <h2>Transform Healthcare in India</h2>
+            <p>HealthSync represents the future of healthcare - where technology saves lives, reduces costs, and ensures every patient receives the safest, most effective treatment possible.</p>
+            <a href="#contact" class="cta-button">Learn More About Implementation</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Add smooth scrolling for CTA button
+            document.querySelector('.cta-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+  Secure instant data access</span> for hospitals and doctors</li>
                 <li><span class="highlight">Biometric identity verification</span> (fingerprint/face)</li>
                 <li><span class="highlight">Real-time allergy & drug interaction detection</span></li>
                 <li><span class="highlight">AI-driven healthcare decision support</span></li>
